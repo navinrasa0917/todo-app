@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow - JavaScript To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <p class="eyebrow">JavaScript Logic & State Management</p>
+      <h1>TaskFlow</h1>
+      <p class="subtitle">A simple, state-driven To-Do List with CRUD, filtering and local persistence.</p>
+    </header>
+
+    <section class="card">
+      <form id="taskForm" class="task-form">
+        <input
+          id="taskInput"
+          type="text"
+          placeholder="What needs to be done?"
+          maxlength="120"
+          autocomplete="off"
+          required
+        >
+        <button type="submit" class="primary-btn">Add Task</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Task filters">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="active">Active</button>
+          <button type="button" class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+        <button type="button" id="clearCompleted" class="text-btn">Clear completed</button>
+      </div>
+
+      <div class="stats">
+        <span id="taskCount">0 tasks</span>
+        <span id="saveStatus">Saved locally</span>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">✓</div>
+        <h2>No tasks here</h2>
+        <p>Add a task above and start getting things done.</p>
+      </div>
+    </section>
+
+    <footer>
+      Data is stored in your browser using localStorage.
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
